@@ -25,7 +25,7 @@ describe('PostsService', () => {
   it('should find a post', () => {
     // реализуйте тест-кейс
     const NEW_POST = {text: 'Some pre-existing post'}
-    const { id } = postsService.create(NEW_POST);
-    expect(postsService.find(id)).toEqual(expect.objectContaining(NEW_POST));
+    const createdPost = postsService.create(NEW_POST);
+    expect(postsService.find(createdPost.id)).toEqual(createdPost);
   });
 });
